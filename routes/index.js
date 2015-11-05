@@ -25,6 +25,10 @@ router.get('/', function(req, res) {
 // simple route to show an HTML page
 router.get('/sample-page', function(req, res) {
   res.render('sample.html')
+});
+
+router.get('/add', function(req, res) {
+  res.render('add.html')
 })
 
 // /**
@@ -65,6 +69,7 @@ router.post('/api/create', function(req, res) {
   var url = req.body.url;
   var tookAction = req.body.tookAction;
   var action = req.body.action;
+  var finished = req.body.finished;
 
   // hold all this data in an object
   // this object should be structured the same way as your db model
@@ -104,7 +109,8 @@ router.post('/api/create', function(req, res) {
     thinkDetail: {
       tookAction: tookAction,
       action: action
-    }
+    },
+    finished: finished
   };
 
   // create a new thing model instance, passing in the object
@@ -324,6 +330,10 @@ router.post('/api/update/:id', function(req, res) {
     if (!dataToUpdate['thinkDetail']) dataToUpdate['thinkDetail'] = {};
     dataToUpdate['thinkDetail']['action'] = action;
   }
+  if (req.body.finished) {
+    finished = req.body.finished;
+    dataToUpdate['finished'] = finished;
+  }
 
   var topic = []; // blank array to hold topic
   if (req.body.topic) {
@@ -336,6 +346,7 @@ router.post('/api/update/:id', function(req, res) {
     people = req.body.people.split(","); // split string into array
     dataToUpdate['people'] = people;
   }
+
 
   var audience = []; // blank array to hold people
   if (req.body.audience) {

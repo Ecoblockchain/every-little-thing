@@ -1,3 +1,76 @@
 /**************/
 /* Custom CSS */
 /**************/
+form{
+	background-color: #C5EFF7;
+	padding: 20px;
+}
+
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 400;
+	color:#2A2A2A;
+}
+label{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	color:#2A2A2A;
+	font-size: 14pt;
+}
+
+.dropdown-menu li{
+	display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    cursor: pointer;
+
+}
+.btn{
+	border: none;
+    outline:none;
+    border-radius: 0;
+
+}
+
+.btn-default{
+	border: none;
+    outline:none;
+    border-radius: 0;
+    background-color:#FFF;
+    color:#2A2A2A;
+        font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+		color:#2A2A2A;
+
+}
+.form-control{
+		border: none;
+    outline:none;
+    border-radius: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+		color:#2A2A2A;
+		border-color:none;
+	box-shadow: none;
+}
+
+.dropdown-menu li{
+			border: none;
+    outline:none;
+    border-radius: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+		color:#2A2A2A;
+}
+
+.dropdown-menu li :hover{
+background-color: #ADACAD;
+}
+
+input{
+	margin-bottom:5px;
+	margin-top:5px;
+}
