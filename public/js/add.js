@@ -26,7 +26,6 @@ var action = "";
 var finished = true;
 
 function init() {
-  console.log("init");
   $("#input-category-other").hide();
   $('#input-endH').hide();
   $('#input-endM').hide();
@@ -328,6 +327,14 @@ jQuery("form").submit(function(e) {
     category = $("#input-category-other").val();
   }
 
+    if (emotion == "") {
+    emotion = $("#input-emotion-other").val();
+  }
+
+    if (attitude == "") {
+    attitude = $("#input-attitude-other").val();
+  }
+
   // make sure we have a location
   //if (!title || title == "") return alert('We need a title!');
 
@@ -372,6 +379,9 @@ jQuery("form").submit(function(e) {
         console.log(response);
         // now, clear the input fields
         jQuery("form input").val('');
+    $('#myForm .btn').removeClass("active");
+
+
       } else {
         alert("something went wrong");
       }
