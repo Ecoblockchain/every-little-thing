@@ -228,14 +228,32 @@ function checkForm() {
 jQuery("form").submit(function(e) {
   e.preventDefault();
 
-  $("#myForm").validate({
+  $(this).validate({
     rules: {
       url: {
         url: true
+      },
+      day: {
+        number: true
+      },
+      month: {
+        number: true
+      },
+      startH: {
+        number: true
+      },
+      startM: {
+        number: true
+      },
+      endH: {
+        number: true
+      },
+      endM: {
+        number: true
       }
     }
   });
-  
+
   var location = "";
 
   if (!$("#input-topic").val()) {
@@ -266,16 +284,39 @@ jQuery("form").submit(function(e) {
   } else {
     resource = jQuery("#input-resource").val();
   }
-
+  if (!$("#input-month").val()) {
+    month = 11;
+  } else {
+    month = parseInt(jQuery("#input-month").val());
+  }
+  if (!$("#input-day").val()) {
+    day = 1;
+  } else {
+    day = parseInt(jQuery("#input-day").val());
+  }
+  if (!$("#input-startH").val()) {
+    startH = 0;
+  } else {
+    startH = parseInt(jQuery("#input-startH").val());
+  }
+  if (!$("#input-startM").val()) {
+    startM = 0;
+  } else {
+    startM = parseInt(jQuery("#input-startM").val());
+  }
+  if (!$("#input-endH").val()) {
+    endH = 0;
+  } else {
+    endH = parseInt(jQuery("#input-endH").val());
+  }
+  if (!$("#input-endM").val()) {
+    endM = 0;
+  } else {
+    endM = parseInt(jQuery("#input-endM").val());
+  }
 
 
   title = jQuery("#input-title").val();
-  month = parseInt(jQuery("#input-month").val());
-  day = parseInt(jQuery("#input-day").val());
-  startH = parseInt(jQuery("#input-startH").val());
-  startM = parseInt(jQuery("#input-startM").val());
-  endH = parseInt(jQuery("#input-endH").val());
-  endM = parseInt(jQuery("#input-endM").val());
   var location = jQuery("#input-location").val();
   description = jQuery("#input-description").val();
   feedback = jQuery("#input-feedback").val();
