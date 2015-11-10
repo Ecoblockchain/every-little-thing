@@ -30,15 +30,14 @@
       </div>
       <div class="col-md-6">
         <h1>Add a new thing</h1>
-        <form method="post" action="/api/create" id="myForm">
+        <form id="myForm">
           <div class="form-group">
             <label for="input-title">Title</label>
-            <input type="text" class="form-control" id="input-title" placeholder="Title" name="title">
+            <input type="text" class="form-control" id="input-title" placeholder="Title" name="title" required>
           </div>
-<!--           <div class="form-group">
-            <label for="input-type">Type</label>
-            <input type="text" class="form-control" id="input-type" placeholder="Type" name="type">
-          </div> -->
+          <div class="form-group">
+            <button  id ="input-finished" type="button" class="btn btn-default">Quick Input</button>
+          </div>
           <div class="form-group">
             <label for="input-type">Type</label>
             <div id ="input-type" class="btn-group" role="group" aria-label="Type">
@@ -47,24 +46,22 @@
               <button type="button" class="btn btn-default">See</button>
             </div>
           </div>
-<!--           <div class="form-group">
-            <label for="input-category">Category</label>
-            <input type="text" class="form-control" id="input-category" placeholder="Category" name="category">
-          </div> -->
           <div class="form-group">
             <label for="input-category">Category</label>
             <div id ="input-category" class="btn-group" role="group" aria-label="Category">
               <button type="button" class="btn btn-default">ITP</button>
-              <button type="button" class="btn btn-default">Home</button>
+              <button type="button" class="btn btn-default">Life</button>
               <button type="button" class="btn btn-default">Family</button>
               <button type="button" class="btn btn-default">Hobby</button>
               <button type="button" class="btn btn-default">Work</button>
+              <button type="button" class="btn btn-default">Other</button>
             </div>
+            <input type="text" class="form-control" id="input-category-other" placeholder="Other category" name="category">
           </div>
           <div class="form-group">
             <label for="input-topic">Topic</label>
             <input type="text" class="form-control" id="input-topic" placeholder = "Topic" name="topic">
-            <div class="btn-group" role="group" aria-label="Category">
+            <div id="input-topic-btn" class="btn-group" role="group" aria-label="Topic">
               <button type="button" class="btn btn-default">Design</button>
               <button type="button" class="btn btn-default">Tech</button>
               <button type="button" class="btn btn-default">Handcrafts</button>
@@ -76,6 +73,10 @@
           <div class="form-group">
             <label for="input-people">People</label>
             <input type="text" class="form-control" id="input-people" placeholder="People" name="people">
+            <div id="input-people-btn" class="btn-group" role="group" aria-label="People">
+              <button type="button" class="btn btn-default">Brady</button>
+              <button type="button" class="btn btn-default">Mom</button>
+            </div>
           </div>
           <div class="form-group">
             <label for="input-month">Month</label>
@@ -86,11 +87,8 @@
             <input type="text" class="form-control" id="input-day" placeholder="Day" name="day">
           </div>
           <div class="form-group">
-            <label for="input-period">Period of Time</label>
-            <button type="button" class="btn btn-default" id="input-period" name="period">Yes</button>
-          </div>
-          <div class="form-group">
-            <label for="input-startH">Time</label>
+            <label for="input-period">Time</label>
+            <button type="button" class="btn btn-default" id="input-period" name="period">Period of time</button>
             <input type="text" class="form-control" id="input-startH" placeholder="Start Hour" name="startH">
             <input type="text" class="form-control" id="input-startM" placeholder="Start Minute" name="startM">
             <input type="text" class="form-control" id="input-endH" placeholder="End Hour" name="endH">
@@ -115,6 +113,7 @@
               <button type="button" class="btn btn-default">Anxious</button>
               <button type="button" class="btn btn-default">Other</button>
             </div>
+            <input type="text" class="form-control" id="input-emotion-other" placeholder="Other emotion" name="emotion">
           </div>
           <div class="form-group">
             <label for="input-description">Description</label>
@@ -130,14 +129,50 @@
           <div class="form-group">
             <label for="input-shared">Sharing</label>
             <button type="button" class="btn btn-default" id="input-shared" name="period">Shared</button>
+            <div id="shared-true">
             <input type="text" class="form-control" id="input-audience" placeholder="Audience" name="audience">
-            <input type="text" class="form-control" id="input-media" placeholder="Media" name="media">
+            <div id="input-audience-btn" class="btn-group" role="group" aria-label="People">
+              <button type="button" class="btn btn-default">Brady</button>
+              <button type="button" class="btn btn-default">Mom</button>
+              <button type="button" class="btn btn-default">Friends</button>
+            </div>
+             <input type="text" class="form-control" id="input-media" placeholder="Media" name="media">
+            <div id ="input-media-btn" class="btn-group" role="group" aria-label="Media">
+              <button type="button" class="btn btn-default">Facebook</button>
+              <button type="button" class="btn btn-default">Twitter</button>
+              <button type="button" class="btn btn-default">Wechat</button>
+              <button type="button" class="btn btn-default">Weibo</button>
+              <button type="button" class="btn btn-default">Email</button>
+              <button type="button" class="btn btn-default">Instagram</button>
+              <button type="button" class="btn btn-default">Message</button>
+            </div>
             <input type="text" class="form-control" id="input-feedback" placeholder="Feedback" name="feedback">
+          </div>
           </div>
           <div class="form-group">
             <label for="input-shared">About Seeing</label>
             <input type="text" class="form-control" id="input-resource" placeholder="Resource" name="resource">
-            <input type="text" class="form-control" id="input-attitude" placeholder="Attitude" name="attitude">
+            <div id ="input-resource-btn" class="btn-group" role="group" aria-label="Resource">
+              <button type="button" class="btn btn-default">Facebook</button>
+              <button type="button" class="btn btn-default">Twitter</button>
+              <button type="button" class="btn btn-default">Wechat</button>
+              <button type="button" class="btn btn-default">Weibo</button>
+              <button type="button" class="btn btn-default">Email</button>
+              <button type="button" class="btn btn-default">Blog</button>
+              <button type="button" class="btn btn-default">YouTube</button>
+              <button type="button" class="btn btn-default">ITP</button>
+              <button type="button" class="btn btn-default">Subway</button>
+            </div>
+
+            <div id ="input-attitude" class="btn-group" role="group" aria-label="Attitude">
+              <button type="button" class="btn btn-default">Agree</button>
+              <button type="button" class="btn btn-default">Disagree</button>
+              <button type="button" class="btn btn-default">Like</button>
+              <button type="button" class="btn btn-default">Dislike</button>
+              <button type="button" class="btn btn-default">Other</button>
+              </div>
+              <input type="text" class="form-control" id="input-attitude-other" placeholder="Other attitude" name="attitude">
+            
             <input type="text" class="form-control" id="input-reason" placeholder="Reason" name="reason">
             <input type="text" class="form-control" id="input-url" placeholder="url" name="url">
           </div>
@@ -161,21 +196,7 @@
     <!-- JQuery validate -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 
-    <script type="text/javascript">
-      $("#myForm").validate({
-          rules: {
-            // compound rule
-            itpYear: {
-              required: true,
-              number: true
-            },
-            link: {
-              required: true,
-              url: true
-            }            
-          }
-
-      });
-    </script>
+    <!-- CUSTOM JS -->
+    <script src="js/add.js"></script>
 
 </html>
