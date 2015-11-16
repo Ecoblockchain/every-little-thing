@@ -19,7 +19,7 @@ var thingSchema = new Schema({
 	time: {
 		period: Boolean,
 		startH: Number,
-		StartM: Number,
+		startM: Number,
 		endH: Number,
 		endM: Number
 	},
