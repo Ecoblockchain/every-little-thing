@@ -13,18 +13,15 @@ var Thing = require("../models/model.js");
  */
 router.get('/', function(req, res) {
 
-  var jsonData = {
-    'name': 'every-little-thing',
-    'api-status': 'OK'
-  }
+  // var jsonData = {
+  //   'name': 'every-little-thing',
+  //   'api-status': 'OK'
+  // }
 
   // respond with json data
-  res.json(jsonData)
-});
+  //res.json(jsonData)
 
-// simple route to show an HTML page
-router.get('/sample-page', function(req, res) {
-  res.render('sample.html')
+  res.render('index.html')
 });
 
 router.get('/add', function(req, res) {
@@ -174,6 +171,106 @@ router.get('/api/get/:id', function(req, res) {
     return res.json(jsonData);
 
   })
+})
+
+router.get('/api/get/day/:day',function(req,res){
+
+  var requestedDay = req.params.day;
+
+  console.log(requestedDay);
+
+  Thing.find({date.day:requestedDay}.select({ 'month': 11 }),function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
+})
+
+router.get('/api/get/shared/:shared',function(req,res){
+
+  var requestedShared = req.params.shared;
+
+  console.log(requestedShared);
+
+  Thing.find({shared:requestedShared},function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
+})
+
+router.get('/api/get/finished/:finished',function(req,res){
+
+  var requestedFinished = req.params.finished;
+
+  console.log(requestedFinished);
+
+  Thing.find({finished:requestedFinished},function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
+})
+
+router.get('/api/get/category/:category',function(req,res){
+
+  var requestedCategory = req.params.category;
+
+  console.log(requestedCategory);
+
+  Thing.find({category:requestedCategory},function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
 })
 
 // /**

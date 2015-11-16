@@ -1,6 +1,9 @@
 /**************/
 /* Custom CSS */
 /**************/
+body{
+	background-color: #090A2F;
+}
 form{
 	background-color: #C5EFF7;
 	padding: 20px;
