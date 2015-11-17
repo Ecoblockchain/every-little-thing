@@ -146,7 +146,7 @@ router.post('/api/create', function(req, res) {
 //  * @return {Object} JSON
 //  */
 
-router.get('/api/get/:id', function(req, res) {
+router.get('/api/get/id/:id', function(req, res) {
 
   var requestedId = req.param('id');
 
@@ -173,105 +173,7 @@ router.get('/api/get/:id', function(req, res) {
   })
 })
 
-router.get('/api/get/day/:day',function(req,res){
 
-  var requestedDay = req.params.day;
-
-  console.log(requestedDay);
-
-  Thing.find({date.day:requestedDay}.select({ 'month': 11 }),function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
-      }
-
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
-
-      return res.json(jsonData);    
-  })
-
-})
-
-router.get('/api/get/shared/:shared',function(req,res){
-
-  var requestedShared = req.params.shared;
-
-  console.log(requestedShared);
-
-  Thing.find({shared:requestedShared},function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
-      }
-
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
-
-      return res.json(jsonData);    
-  })
-
-})
-
-router.get('/api/get/finished/:finished',function(req,res){
-
-  var requestedFinished = req.params.finished;
-
-  console.log(requestedFinished);
-
-  Thing.find({finished:requestedFinished},function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
-      }
-
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
-
-      return res.json(jsonData);    
-  })
-
-})
-
-router.get('/api/get/category/:category',function(req,res){
-
-  var requestedCategory = req.params.category;
-
-  console.log(requestedCategory);
-
-  Thing.find({category:requestedCategory},function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
-      }
-
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
-
-      return res.json(jsonData);    
-  })
-
-})
 
 // /**
 //  * GET '/api/get'
@@ -520,5 +422,82 @@ router.get('/api/delete/:id', function(req, res) {
   })
 
 })
+
+router.get('/api/get/day/:day',function(req,res){
+
+  var requestedDay = req.params.day;
+
+  Thing.find({'date.day':requestedDay},function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
+})
+
+
+router.get('/api/get/category/:category',function(req,res){
+
+  var requestedCategory = req.params.category;
+
+  Thing.find({category:requestedCategory},function(err,data){
+      if(err){
+        var error = {
+          status: "ERROR",
+          message: err
+        }
+        return res.json(err)
+      }
+
+      var jsonData = {
+        status: "OK",
+        thing: data
+      }
+
+      return res.json(jsonData);    
+  })
+
+})
+
+
+// /api/get/query?day=11&category=ITP&emotion=Happy&peope=Brady
+router.get('/api/get/query',function(req,res){
+
+  var searchQuery = {};
+
+  if(req.query.day){
+    searchQuery['date.day'] =  req.query.day
+  }
+
+  if(req.query.category){
+    searchQuery['category'] =  req.query.category
+  }
+
+  if(req.query.emotion){
+    searchQuery['emotion'] =  req.query.emotion
+  }  
+
+  if(req.query.people){
+    searchQuery['people'] =  req.query.people
+  }  
+
+  console.log(searchQuery);
+
+  Thing.find(searchQuery,function(err,data){
+    res.json(data);
+  })
+})
+
 
 module.exports = router;
