@@ -1,83 +1,105 @@
 /**************/
+
 /* Custom CSS */
+
 /**************/
-body{
-	background-color: #090A2F;
+body {
+	background-color: #fff;
 }
-form{
+
+form {
 	background-color: #C5EFF7;
 	padding: 20px;
 }
 
-h1{
+h1 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 400;
-	color:#2A2A2A;
+	color: #2A2A2A;
 }
-label{
+
+label {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
-	color:#2A2A2A;
+	color: #2A2A2A;
 	font-size: 14pt;
 }
 
-.dropdown-menu li{
+.dropdown-menu li {
 	display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: 400;
-    line-height: 1.42857143;
-    white-space: nowrap;
-    cursor: pointer;
-
+	padding: 3px 20px;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	white-space: nowrap;
+	cursor: pointer;
 }
-.btn{
+
+.btn {
 	border: none;
-    outline:none;
-    border-radius: 0;
-
+	outline: none;
+	border-radius: 0;
 }
 
-.btn-default{
+.btn-default {
 	border: none;
-    outline:none;
-    border-radius: 0;
-    background-color:#FFF;
-    color:#2A2A2A;
-        font-family: 'Source Sans Pro', sans-serif;
+	outline: none;
+	border-radius: 0;
+	background-color: #FFF;
+	color: #2A2A2A;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
-		color:#2A2A2A;
-
+	color: #2A2A2A;
 }
-.form-control{
-		border: none;
-    outline:none;
-    border-radius: 0;
-        font-family: 'Source Sans Pro', sans-serif;
+
+.form-control {
+	border: none;
+	outline: none;
+	border-radius: 0;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
-		color:#2A2A2A;
-		border-color:none;
+	color: #2A2A2A;
+	border-color: none;
 	box-shadow: none;
 }
 
-.dropdown-menu li{
-			border: none;
-    outline:none;
-    border-radius: 0;
-        font-family: 'Source Sans Pro', sans-serif;
+.dropdown-menu li {
+	border: none;
+	outline: none;
+	border-radius: 0;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
-		color:#2A2A2A;
+	color: #2A2A2A;
 }
 
-.dropdown-menu li :hover{
-background-color: #ADACAD;
+.dropdown-menu li:hover {
+	background-color: #ADACAD;
 }
 
-input{
-	margin-bottom:5px;
-	margin-top:5px;
+input {
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
-.active{
-	background-color:blue !important;
+.active {
+	background-color: blue !important;
+}
+
+.emotion {
+	height: 50px;
+	position: relative;
+	transform: translate(5px, -25px);
+	z-index: 200;
+}
+
+.category {
+	height: 50px;
+	position: relative;
+}
+
+.thing{
+	position: relative;
+	display: inline-block;
+	margin:20px;
+	padding: 10px;
 }

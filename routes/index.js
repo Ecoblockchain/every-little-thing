@@ -423,78 +423,90 @@ router.get('/api/delete/:id', function(req, res) {
 
 })
 
-router.get('/api/get/day/:day',function(req,res){
+router.get('/api/get/day/:day', function(req, res) {
 
   var requestedDay = req.params.day;
 
-  Thing.find({'date.day':requestedDay},function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
+  Thing.find({
+    'date.day': requestedDay
+  }, function(err, data) {
+    if (err) {
+      var error = {
+        status: "ERROR",
+        message: err
       }
+      return res.json(err)
+    }
 
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
+    var jsonData = {
+      status: "OK",
+      thing: data
+    }
 
-      return res.json(jsonData);    
+    return res.json(jsonData);
   })
 
 })
 
 
-router.get('/api/get/category/:category',function(req,res){
+router.get('/api/get/category/:category', function(req, res) {
 
   var requestedCategory = req.params.category;
 
-  Thing.find({category:requestedCategory},function(err,data){
-      if(err){
-        var error = {
-          status: "ERROR",
-          message: err
-        }
-        return res.json(err)
+  Thing.find({
+    category: requestedCategory
+  }, function(err, data) {
+    if (err) {
+      var error = {
+        status: "ERROR",
+        message: err
       }
+      return res.json(err)
+    }
 
-      var jsonData = {
-        status: "OK",
-        thing: data
-      }
+    var jsonData = {
+      status: "OK",
+      thing: data
+    }
 
-      return res.json(jsonData);    
+    return res.json(jsonData);
+  })
+
+})
+
+router.get('/api/get/sort', function(req, res) {
+
+  Thing.find().sort('day').exec(function(err, data) {
+    res.json(data);
   })
 
 })
 
 
 // /api/get/query?day=11&category=ITP&emotion=Happy&peope=Brady
-router.get('/api/get/query',function(req,res){
+router.get('/api/get/query', function(req, res) {
 
   var searchQuery = {};
 
-  if(req.query.day){
-    searchQuery['date.day'] =  req.query.day
+  if (req.query.day) {
+    searchQuery['date.day'] = req.query.day
   }
 
-  if(req.query.category){
-    searchQuery['category'] =  req.query.category
+  if (req.query.category) {
+    searchQuery['category'] = req.query.category
   }
 
-  if(req.query.emotion){
-    searchQuery['emotion'] =  req.query.emotion
-  }  
+  if (req.query.emotion) {
+    searchQuery['emotion'] = req.query.emotion
+  }
 
-  if(req.query.people){
-    searchQuery['people'] =  req.query.people
-  }  
+  if (req.query.people) {
+    searchQuery['people'] = req.query.people
+  }
 
   console.log(searchQuery);
 
-  Thing.find(searchQuery,function(err,data){
+  Thing.find(searchQuery, function(err, data) {
     res.json(data);
   })
 })
