@@ -30,7 +30,7 @@ label {
 
 .section {
 	margin: 0;
-	padding: 40px 0 40px 0;
+	
 }
 
 .odd {
@@ -39,6 +39,7 @@ label {
 
 .even {
 	background-color: #ede9e6;
+	padding: 40px 0 40px 0;
 }
 
 #title-wrapper {
