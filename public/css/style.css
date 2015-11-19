@@ -12,16 +12,14 @@ form {
 	padding: 20px;
 }
 
-h1{
-	color:#fff;
+h1 {
 	font-family: 'Dosis', sans-serif;
 }
 
-p{
-	color:#fff;
+p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
-	font-size: 24px;
+	font-size: 18px;
 }
 
 label {
@@ -31,35 +29,39 @@ label {
 	font-size: 14pt;
 }
 
-.section{
-	margin:0;
+.section {
+	margin: 0;
 	padding: 40px 0 40px 0;
 }
 
-.odd{
-	background-color: #dd5c4c;
+.odd {
+	background-color: #f2816f;
 }
 
-.even{
+.even {
 	background-color: #ede9e6;
 }
 
-#title-wrapper{
+#title-wrapper {
 	position: absolute;
-	left:50%;
-	top:45%;
-	transform:translate(-50%, -50%);
-	padding: 10px;
-	/*border: 5px solid #fff;
-	border-radius: 5px;*/
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%, -50%);
+	padding: 10px;	/*border: 5px solid #fff;
+		border-radius: 5px;*/
 }
 
-#title-wrapper h1{
+#title-wrapper h1 {
+	color: #fff;
 	text-align: center;
 	font-size: 96px;
-	padding:12px;
+	padding: 12px;
 }
-#title-wrapper p{
+
+#title-wrapper p {
+	font-size: 36px;
+	color: #fff;
+	font-family: 'Dosis', sans-serif;
 	text-align: center;
 }
 
@@ -123,9 +125,10 @@ input {
 	background-color: blue !important;
 }
 
-#byThings{
-
+#byThings {
+	padding-top: 40px;
 }
+
 .emotion {
 	height: 100px;
 	position: relative;
@@ -133,34 +136,238 @@ input {
 	z-index: 200;
 }
 
+/*.thing :hover{
+	filter: alpha(opacity=100);
+   opacity: 0.7;
+   top: 0px;
+   -webkit-transition-delay: 0s;
+   -moz-transition-delay: 0s;
+   -o-transition-delay: 0s;
+   -ms-transition-delay: 0s;
+   transition-delay: 0s;
+   -webkit-animation: bounceY 0.9s linear;
+   -moz-animation: bounceY 0.9s linear;
+   -ms-animation: bounceY 0.9s linear;
+   animation: bounceY 0.9s linear;
+}*/
+
 .category {
-	top:30px;
+	top: 30px;
 	height: 100px;
 	position: relative;
-	margin-bottom:0;
+	margin-bottom: 0;
 	z-index: 0;
 }
 
-.thing{
+.thing {
 	position: relative;
 	display: inline-block;
-	margin-bottom:0;
+	margin-bottom: 0;
 }
-.svg-container{
+
+.svg-container {
+	z-index: 99;
+	position: absolute;
+}
+
+.people-container {
+	left: 0;
+	top: 0
+}
+
+.media-container {
+	left: 0;
+	top: 110px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	z-index: 999;
+	-moz-opacity: 0.6;
+	opacity: .60;
+	filter: alpha(opacity=60);
+
+  -webkit-transition: all 0.3s ease-out 0.1s;
+  -moz-transition: all 0.3s ease-out 0.1s;
+  -o-transition: all 0.3s ease-out 0.1s;
+  -ms-transition: all 0.3s ease-out 0.1s;
+  transition: all 0.3s ease-out 0.1s;
+}
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 45%;
+	height: 60%;
+	padding: 0 20px 0 20px;
+	color: #26333c;
+	font-family: 'Dosis', sans-serif;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+
+}
+
+.pop-title{
+	text-align: center;
+	height: 70px;
+	padding: 2px;
+	width: 55%;
+	color: #fff;
+	left: 0;
+	z-index: 999;
+}
+
+.pop-title h3{
+	text-align: center;
+}
+
+.pop-description{
+	width: 80%;
+	left: 20%;
+	top:	0px;
+	background-color: #ede9e6;
+	position: relative;
+	padding: 20px 20px 60px 200px;
+}
+
+.pop-svg{
+	position: absolute;
+	top:-20px;
+}
+.people-tag{
+	display: inline-block;
+}
+
+.pop-emotion{
+		position: absolute;
 	
-	z-index: 9900;
-	position:absolute;
+	left:80px;
+	top:100px;
 }
 
-.people-container{
-	left:0;
-	top:0
+.pop-emotion div{
+	width: 200px;
+	height: 40px;
+	/*display: inline-block;*/
+	padding: 8px;
+	font-size: 18px;
+	text-align: right;	
+	margin:4px 0px 4px 0px;	
+}
+
+.topicTag{
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 1px 4px 1px 4px;
+	font-size: 16px;
+	border-bottom:1px solid #26333c;
+}
+
+.mediaTag{
+	/*border: 4px solid  #80b7d1;*/
+}
+
+.pop-date{
+	font-family: 'Dosis', sans-serif;
+	font-size:18px;
+	font-weight: 400;
+	color:#26333c;
+	padding: 4px;
+	border:2px solid #26333c;
+	display: inline-block;
+	position: absolute;
+    bottom: 10px;
+    left: 10px;
+
 
 }
 
-.media-container{
-		left:0;
-	top:110px;
-
+#eraser{
+	position: fixed;
+	z-index: 800;
+	margin:0px;	
+	cursor: pointer;
+	top:0px;
+	right:0px;
 }
 
+#sub-header{
+	position: fixed;
+	z-index: 800;
+	margin:0px;	
+	cursor: pointer;
+	top:0px;
+	left:0px;
+}
+#sub-menu{
+	margin-left:0px;
+}
+
+#sub-menu div{
+/*	position: relative;
+	display: inline-block;*/
+	height: 20px;
+	width:10px;
+}
+
+.menu-button{
+	font-family: 'Dosis', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 20px;
+	color:#26333c;
+}
+
+.clicked{
+
+}
+#itp-button{
+	background-color: #958ab7;
+}
+
+#life-button{
+	background-color: #5fc093;
+}
+
+#family-button{
+	background-color: #fbc04b;
+}
+
+#hobby-button{
+	background-color: #f2816f
+}
+
+#work-button{
+	background-color: #38b9c7;
+}
+
+
+
+.pop-Happy{
+	background-image: url("/img/emotion/Happy.png");
+}
+
+.pop-Sad{
+	background-image: url("/img/emotion/Sad.png");
+}
+
+.pop-Angry{
+	background-image: url("/img/emotion/Angry.png");
+}
+
+.pop-Regret{
+	background-image: url("/img/emotion/Regret.png");
+}
+
+.pop-Anxious{
+	background-image: url("/img/emotion/Anxious.png");
+}
+
+.pop-Surprise{
+	background-image: url("/img/emotion/Surprise.png");
+}

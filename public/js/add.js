@@ -226,33 +226,6 @@ function checkForm() {
 
 jQuery("form").submit(function(e) {
   e.preventDefault();
-
-  // $(this).validate({
-  //   rules: {
-  //     url: {
-  //       url: true
-  //     },
-  //     day: {
-  //       number: true
-  //     },
-  //     month: {
-  //       number: true
-  //     },
-  //     startH: {
-  //       number: true
-  //     },
-  //     startM: {
-  //       number: true
-  //     },
-  //     endH: {
-  //       number: true
-  //     },
-  //     endM: {
-  //       number: true
-  //     }
-  //   }
-  // });
-
   var location = "";
 
   if (!$("#input-topic").val()) {

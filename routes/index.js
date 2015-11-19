@@ -476,7 +476,7 @@ router.get('/api/get/category/:category', function(req, res) {
 
 router.get('/api/get/sort', function(req, res) {
 
-  Thing.find().sort('day').exec(function(err, data) {
+  Thing.find().sort('date.day').exec(function(err, data) {
     res.json(data);
   })
 
