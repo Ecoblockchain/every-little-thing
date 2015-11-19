@@ -33,6 +33,11 @@ label {
 	
 }
 
+#section-3{
+	padding-left:200px;
+	padding-right:200px;
+}
+
 .odd {
 	background-color: #f2816f;
 }

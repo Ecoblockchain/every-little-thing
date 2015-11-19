@@ -511,7 +511,7 @@ function drawData(data) {
 
                 $("#section-2").append(overlay);
                 $("#section-2").append(content);
-
+            
                 // $(".topicTag").css({
                 //     "background-color": bg
                 // });
