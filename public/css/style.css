@@ -8,8 +8,7 @@ body {
 }
 
 form {
-	background-color: #C5EFF7;
-	padding: 20px;
+
 }
 
 h1 {
@@ -90,6 +89,17 @@ label {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	color: #2A2A2A;
+	font-size:24px;
+}
+
+.btn-prev {
+	margin-right: 10px !important;
+	
+}
+
+.btn-next{
+	
+	margin-left: 10px !important;
 }
 
 .form-control {
@@ -101,6 +111,13 @@ label {
 	color: #2A2A2A;
 	border-color: none;
 	box-shadow: none;
+	font-size:24px;
+	height: 48px;
+}
+
+.form-group label{
+	font-size:36px;
+	font-family: 'Dosis', sans-serif;
 }
 
 .dropdown-menu li {
@@ -122,7 +139,20 @@ input {
 }
 
 .active {
-	background-color: blue !important;
+	background-color: #5fc093 !important;
+}
+
+
+.center-wrapper{
+
+	padding:200px;
+	font-size: 24px;
+}
+
+.center-wrapper h1{
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
 }
 
 #byThings {
@@ -295,7 +325,14 @@ input {
 	top:0px;
 	right:0px;
 }
-
+#add-btn{
+		position: absolute;
+	z-index: 800;
+	margin:0px;	
+	cursor: pointer;
+	top:0px;
+	right:0px;
+}
 #sub-header{
 	position: fixed;
 	z-index: 800;

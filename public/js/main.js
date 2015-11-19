@@ -41,9 +41,9 @@ $(document).ready(function() {
         } else {
             $(this).addClass('clicked');
             $('#byThings').empty();
-            if (data.length > 0) {
-                drawByCategory("Life");
-            }
+
+            drawByCategory("Life");
+
         }
     });
 
@@ -180,6 +180,7 @@ function drawAll() {
             $('#byThings').html("Nothing Found");
         }
     });
+    resizeDiv();
 }
 
 function drawByDay(day) {
@@ -191,6 +192,7 @@ function drawByDay(day) {
             $('#byThings').html("Nothing Found");
         }
     });
+    resizeDiv();
 }
 
 function drawByCategory(category) {
@@ -202,6 +204,7 @@ function drawByCategory(category) {
             $('#byThings').html("Sorry, nothing Found");
         }
     });
+    resizeDiv();
 }
 
 function drawByPeople(people) {
@@ -213,6 +216,7 @@ function drawByPeople(people) {
             $('#byThings').html("Sorry, nothing Found");
         }
     });
+    resizeDiv();
 }
 
 function drawByEmotion(emotion) {
@@ -385,6 +389,7 @@ function drawData(data) {
             });
 
         updateColor(data);
+
         //peopleFilter(data);
         $('.emotion, .category').each(function() {
             var n = $(this).attr("id").split("-")[1];
@@ -530,7 +535,7 @@ function updateColor(data) {
                 var currentPersonSVG = $('.' + currentPerson).toArray();
                 for (var k = 0; k < currentPersonSVG.length; k++) {
                     var circle = $(currentPersonSVG[k]).children();
-                    var h = 0.1 + 0.1 * currentPersonSVG.length;
+                    var h = 0.2 - 0.02 * currentPersonSVG.length;
                     var s = 0.52;
                     var v = 0.82;
                     var colorP = HSVtoRGB(h, s, v);
@@ -550,6 +555,7 @@ function updateColor(data) {
             }
         }
     }
+
     return
 }
 
@@ -618,11 +624,23 @@ window.onresize = function(event) {
 }
 
 function resizeDiv() {
-    vpw = $(window).width();
-    vph = $(window).height();
-    $('.section').css({
+
+    var vpw = $(window).width();
+    var vph = $(window).height();
+
+    var newH = $('.even').css('height');
+    newH = parseInt(newH, 10);
+
+    $('.odd').css({
         "height": vph + "px"
     });
+    // if (newH < vph) {
+    //     $('.even').css({
+    //         "height": vph + "px"
+    //     });
+    // } else {
+
+    // }
     $('.menu-button').css({
         "height": vph / 11 + "px"
     });

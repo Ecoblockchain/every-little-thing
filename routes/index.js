@@ -25,6 +25,10 @@ router.get('/', function(req, res) {
 });
 
 router.get('/add', function(req, res) {
+  res.render('add-simple.html')
+})
+
+router.get('/addmore', function(req, res) {
   res.render('add.html')
 })
 
