@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Every Little Thing</title>
     <!-- Custom Font - Change 'Muli' to the font you want -->
-    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300|Dosis:400,300' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Custom CSS inside CSS folder -->
@@ -19,15 +19,29 @@
     <![endif]-->
   </head>
   <body>
-    <!-- <h1>Every Little Thing</h1> -->
-    <div id="byThings"></div>
+    
+      <div id="section-1" class="section odd">
+        <div id="title-wrapper">
+        <h1>Every Little Thing</h1>
+        <p>Matters</p>
+      </div>
+      </div>
+      <div id="section-2" class="section even">
+        <div class="container">
+        <div id="byThings"></div>
+        </div>
+      </div>
+      <div id="section-3" class="section odd">
+      </div>
     <div id="treemap"></div>
+  
   </body>
   <!-- JQuery script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/jqwidgets/jqxcore.js"></script>
-    <script src="js/jqwidgets/jqxtooltip.js"></script>
-    <script src="js/jqwidgets/jqxtreemap.js"></script>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!--     // <script src="js/jqwidgets/jqxcore.js"></script>
+    // <script src="js/jqwidgets/jqxtooltip.js"></script>
+    // <script src="js/jqwidgets/jqxtreemap.js"></script> -->
   <!-- CUSTOM JS -->
   <script src="js/main.js"></script>
 </html>

@@ -4,7 +4,7 @@
 
 /**************/
 body {
-	background-color: #fff;
+	background-color: #ede9e6;
 }
 
 form {
@@ -12,10 +12,16 @@ form {
 	padding: 20px;
 }
 
-h1 {
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: 400;
-	color: #2A2A2A;
+h1{
+	color:#fff;
+	font-family: 'Dosis', sans-serif;
+}
+
+p{
+	color:#fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
 }
 
 label {
@@ -23,6 +29,38 @@ label {
 	font-weight: 400;
 	color: #2A2A2A;
 	font-size: 14pt;
+}
+
+.section{
+	margin:0;
+	padding: 40px 0 40px 0;
+}
+
+.odd{
+	background-color: #dd5c4c;
+}
+
+.even{
+	background-color: #ede9e6;
+}
+
+#title-wrapper{
+	position: absolute;
+	left:50%;
+	top:45%;
+	transform:translate(-50%, -50%);
+	padding: 10px;
+	/*border: 5px solid #fff;
+	border-radius: 5px;*/
+}
+
+#title-wrapper h1{
+	text-align: center;
+	font-size: 96px;
+	padding:12px;
+}
+#title-wrapper p{
+	text-align: center;
 }
 
 .dropdown-menu li {
@@ -85,21 +123,44 @@ input {
 	background-color: blue !important;
 }
 
+#byThings{
+
+}
 .emotion {
-	height: 50px;
+	height: 100px;
 	position: relative;
-	transform: translate(5px, -25px);
+	transform: translate(15px, -80px);
 	z-index: 200;
 }
 
 .category {
-	height: 50px;
+	top:30px;
+	height: 100px;
 	position: relative;
+	margin-bottom:0;
+	z-index: 0;
 }
 
 .thing{
 	position: relative;
 	display: inline-block;
-	margin:20px;
-	padding: 10px;
+	margin-bottom:0;
 }
+.svg-container{
+	
+	z-index: 9900;
+	position:absolute;
+}
+
+.people-container{
+	left:0;
+	top:0
+
+}
+
+.media-container{
+		left:0;
+	top:110px;
+
+}
+
