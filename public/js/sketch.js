@@ -35,7 +35,7 @@ function draw() {
   }
   time = time + timeChange;
 
-  number = int(map(mouseY, 0, height, 10, 20));
+  // number = int(map(mouseY, 0, height, 10, 20));
 
   fill(0, 0, 50);
   //rect(width-30,mouseY,10,20);
